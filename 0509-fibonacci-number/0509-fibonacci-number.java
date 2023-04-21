@@ -1,6 +1,6 @@
 class Solution {
     public int fib(int n) {
-        //Using Recurssion to solve the problem
+        //Using Recursion to solve the problem
         // calulcating the sum of each f(n) till we reach f(1);        
         if(n<=1)
             return n;        
