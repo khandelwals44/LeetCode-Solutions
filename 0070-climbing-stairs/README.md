@@ -5,7 +5,7 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> n = 2
+<pre><strong>Input:</strong> n =  2
 <strong>Output:</strong> 2
 <strong>Explanation:</strong> There are two ways to climb to the top.
 1. 1 step + 1 step
