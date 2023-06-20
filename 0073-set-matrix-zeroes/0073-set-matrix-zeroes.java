@@ -74,25 +74,61 @@ class Solution {
          
    
         
-         //better
-         int[] row = new int[matrix.length];
-         int[] coloumn = new int[matrix[0].length];
-         Arrays. fill(row, 0);
-         Arrays. fill(coloumn, 0);
+         //better solution
+        //  int[] row = new int[matrix.length];
+        //  int[] coloumn = new int[matrix[0].length];
+        //  Arrays. fill(row, 0);
+        //  Arrays. fill(coloumn, 0);
+        //  for(int i = 0;i<matrix.length;i++){
+        //     for(int j = 0;j<matrix[0].length;j++){
+        //         if(matrix[i][j]==0){
+        //             row[i]=1;
+        //             coloumn[j]=1;
+        //         }
+        //     }
+        // }
+        //  for(int i = 0;i<matrix.length;i++){
+        //     for(int j = 0;j<matrix[0].length;j++){
+        //         if(row[i]==1 || coloumn[j] ==1){
+        //             matrix[i][j]=0;
+        //         }
+        //     }
+        // }
+         
+         //Optimal Solution
+         //int[] row = new int[matrix.length]; matrix[][0];
+         //int[] coloumn = new int[matrix[0].length];matrix[0][];
+         int col0=-1;
+         //Arrays. fill(row, 0);
+         //Arrays. fill(coloumn, 0);
          for(int i = 0;i<matrix.length;i++){
             for(int j = 0;j<matrix[0].length;j++){
                 if(matrix[i][j]==0){
-                    row[i]=1;
-                    coloumn[j]=1;
+                    matrix[i][0]=0;
+                    if(j != 0)
+                        matrix[0][j]=0;
+                    else 
+                        col0=0;
                 }
             }
         }
+         for(int i = 1;i<matrix.length;i++){
+            for(int j = 1;j<matrix[0].length;j++){
+                if(matrix[i][j]!=0){
+                    
+                    if(matrix[i][0] == 0 || matrix[0][j]==0)
+                        matrix[i][j]=0;
+                }
+            }
+        }
+         if(matrix[0][0]==0)
+         for(int i = 0;i<matrix[0].length;i++){
+             matrix[0][i]=0;
+         }
+         
+         if(col0==0)
          for(int i = 0;i<matrix.length;i++){
-            for(int j = 0;j<matrix[0].length;j++){
-                if(row[i]==1 || coloumn[j] ==1){
-                    matrix[i][j]=0;
-                }
-            }
-        }
+             matrix[i][0]=0;
+         }
 }
 }
